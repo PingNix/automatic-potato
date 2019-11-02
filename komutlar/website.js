@@ -7,10 +7,10 @@ exports.run = async (client, message, params, args) => {
 
   const yardım = new Discord.RichEmbed()
   .setColor(0x36393E)
-      .setAuthor(`Asistan Bot`, client.user.avatarURL)
+      .setAuthor(`MC-AT Bot by: TheMost#5681`, client.user.avatarURL)
       .setThumbnail(client.user.avatarURL)
-      .addField("<a:fast_parrot:599310200163401748> Linkler", `Website [TIKLA](https://asistanbott.glitch.me)`)              
-  .setFooter(`${message.author.username} tarafından istendi. | © Asistan Bot.  `, message.author.avatarURL)
+      .addField("<a:fast_parrot:599310200163401748> Linkler", `Website [TIKLA](https://MC-AT.glitch.me)`)              
+  .setFooter(`${message.author.username} tarafından istendi. | © MC-AT Bot.  `, message.author.avatarURL)
   return message.channel.sendEmbed(yardım);
 
 };

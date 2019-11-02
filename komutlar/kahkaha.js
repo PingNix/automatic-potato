@@ -19,7 +19,7 @@ exports.run = (client, message, args) => {
     }
 
     let username = member.user.username;
-    member.send('Sunucuya Hoş Geldin!');
+    member.send('MC-AT BOT Sunucuya Hoş Geldin!');
     member.guild.defaultChannel.send('');
 };
 

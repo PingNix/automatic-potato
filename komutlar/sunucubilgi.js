@@ -17,7 +17,7 @@ exports.run = (bot, message, params) => {
    .addField('AFK kanalı:', message.guild.afkChannel, true)
    .addField('AFK zaman aşımı:', message.guild.afkTimeout, true)
    .addField('Oluşturma tarihi:', message.guild.createdAt, true)
-   .setFooter(`© Mythia Bot Tüm hakları saklıdır. `, message.guild.iconURL)
+   .setFooter(`© MC-AT by:TheMost#5681 Bot Tüm hakları saklıdır. `, message.guild.iconURL)
    .setTimestamp()
    message.channel.send({embed});
    message.react('✅')

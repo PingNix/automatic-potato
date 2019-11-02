@@ -3,7 +3,7 @@ exports.run = (client, message, args) => {
 	try {
 		const embed = new Discord.RichEmbed()
 			.addField(`Sunucuda, bulunmakta olan roller;`, message.guild.roles.filter(r => r.name !== "@everyone").map(r => r).join(' , '))
-      .setFooter('© Mythia Bot Tüm hakları saklıdır.', client.user.avatarURL)
+      .setFooter('© MC-AT Bot Tüm hakları saklıdır. by: TheMost#5681', client.user.avatarURL)
 			.setColor(0x808080)
 			.setTimestamp()
 		message.channel.send({embed})

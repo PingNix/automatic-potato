@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 exports.run = function(client, message) {
  
     const embed = new Discord.RichEmbed()
-        .setDescription("**WOODIE**")
+        .setDescription("**MC-AT**")
         .setImage("https://vignette.wikia.nocookie.net/dont-starve-game/images/2/23/Woodie.png/revision/latest/scale-to-width-down/350?cb=20140330212814")
         .setThumbnail("https://vignette.wikia.nocookie.net/dont-starve-game/images/2/23/Woodie.png/revision/latest/scale-to-width-down/350?cb=20140330212814")
         .setColor(0x00AE86)

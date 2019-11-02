@@ -2,3 +2,5 @@
 GELİŞMİŞ ALTYAPIYA SAHİP BU BOT CODEMAREFİ - [Sadista] - tarafından paylaşılmıştır.
 
 herhangi bir aldıgınız hatada sorunda sitemizin yorumlar kısmında belirtirseniz yardımcı oluruz..
+
+atyapı sahibi ve paylaşımda bulunan MC-AT by:TheMost#5681

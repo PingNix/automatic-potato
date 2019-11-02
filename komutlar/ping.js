@@ -17,7 +17,7 @@ exports.run = (client, message, params) => {
             timestamp: new Date(),
             footer: {
               icon_url: "",
-              text: "© Mythia Bot Tüm hakları saklıdır."
+              text: "© MC-AT  Bot Tüm hakları saklıdır. by: TheMost#5681"
             }
           }
         });  
