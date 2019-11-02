@@ -1,6 +1,4 @@
-BU BOT Elwasy#3071'e AİTTİR İZİNSİZ PAYLAŞILMASI YASAKTIR!!!!!!
+## GELİŞMİŞ ALTYAPI BOTU - https://codemarefi.blogspot.com - TAFINDAN PAYLAŞILMIŞTIR
+GELİŞMİŞ ALTYAPIYA SAHİP BU BOT CODEMAREFİ - [Sadista] - tarafından paylaşılmıştır.
 
-
-
-
-KOMUTLAR CODARE SUNUCUSUNA AİTTİR  İZİNSİZ PAYLAŞILMASI YASAKTIR!!!!!!!
+herhangi

@@ -84,7 +84,7 @@ exports.run = async (bot, msg, args) => {
         .addField(`Botmu:`, userinfo.bot, true)
         .addField(`Roller:`, `${msg.guild.members.get(user.id).roles.filter(r => r.name !== "@everyone").map(r => r).join(' **|** ') || "**Bu kullanıcıda hiçbir rol bulunmuyor**"}`, false)
         .addField(`Son gönderdiği mesaj:`, userinfo.sonmesaj, false)
-        .setFooter(`Asistan Bot || Kullanıcı Bilgi Sistemi`)
+        .setFooter(`Sadis Bot || Kullanıcı Bilgi Sistemi`)
         msg.channel.send(uembed)
     }
 
