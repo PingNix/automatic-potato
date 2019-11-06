@@ -1,5 +1,6 @@
 {
-  "prefix": "", //prefixinizi giriniz
-  "token": "", // tokeninizi giriniz
-  "sahip": "" // Kendi discord idnizi giriniz
+  "prefix": "/", 
+  "token": "NjQxNzQ1NDI2MjU2NDk0NjAy.XcM24w.UZIvtwcRC0o3DMIPsipieyuPVaY", 
+  "sahip": "454988920669732874" 
+
 }

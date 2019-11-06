@@ -1,12 +1,12 @@
 {
-  "name": "MC-AT",
+  "name": "Eğlence",
   "version": "0.0.1",
   "description": "",
   "main": "bot.js",
   "scripts": {
     "test": "node bot.js"
   },
-  "author": "TheMost#5681",
+  "author": "owner",
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.2",
