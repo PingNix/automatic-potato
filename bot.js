@@ -39,7 +39,7 @@ const log = message => {
 };
 
 client.on("ready", () => {
-  client.user.setGame(`!!yardım | !!davet | asistanbott.glitch.me`, "https://www.twitch.tv/ddfsd7f01");
+  client.user.setGame(`"ArdaDemr Youtube"`, "https://www.twitch.tv/alleycatts");
         }, 
   console.log("Bağlandım!")
 );

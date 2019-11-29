@@ -4,17 +4,14 @@ const ayarlar = require('../ayarlar.json');
 var prefix = ayarlar.prefix;
 
 exports.run = (client, message, params) => {
-message.delete(3000)
-if(message.channel.id !== "647615928397463594") return message.channel.send("Komutlarımız Sadece Komutlar Chatinde Çalışır.")
-.then(m=>m.delete(6000))
   const embedyardim = new Discord.RichEmbed()
-  .setTitle("<a:sarisik:648204836596350986> AlleyCat Yardım Menüsü <a:sarisik:648204836596350986> ")
+  .setTitle("ArdaDemr Bot Yardım")
   .setDescription('')
   .setColor('RANDOM')
   .addField("**Küfür Koruması**", `Küfür Engelleme Açmak İçin {prefix}küfür-engelle aç "kapatmak için" {prefix}küfür-engelle kapat`)
   .addField("**Reklam Koruması**", `Link Engelleme Açmak İçin {prefix}link-engelle aç "kapatmak için" {prefix}link-engelle kapat`)
-  .addField("**Everyone Koruması**", `Açmak için .everyone-engelle aç Kapatmak için .everyone-engelle kapat`)
-  .addField("**Bilgilerimiz**", `Oyun Komutlarını Gösterir.`)
+  .addField("**Everyone Koruması**", `Açmak için {prefix}everyone-engelle aç Kapatmak için {prefix}everyone-engelle kapat`)
+  .addField("**Giriş Çıkış Ayarlaması**", `{prefix}giriş-çıkış-ayarla #kanal`)
   .setFooter('AlleyCat Discord Bot')
 if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());

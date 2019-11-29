@@ -10,13 +10,13 @@ module.exports = client => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: ${client.user.username} ismi ile giriş yapıldı!`);
   client.user.setStatus("online");
    var oyun = [
-        "Bu bot **Elwasy Aittir! ** ",
-        "Bu bot **Elwasy Aittir! ** ",
-        "Bu bot **Elwasy Aittir! ** ", 
-        "Bu bot **Elwasy Aittir! ** ",
-        "Bu bot **Elwasy Aittir! ** ",
-        "Bu bot **Elwasy Aittir! ** ",
-        "Bu bot **Elwasy Aittir! ** "
+        "ArdaDemr Youtube",
+        "ArdaDemr Youtube",
+        "ArdaDemr Youtube",
+        "ArdaDemr Youtube",
+        "ArdaDemr Youtube",
+        "ArdaDemr Youtube",
+        "ArdaDemr Youtube"
     ];
 
     setInterval(function() {
