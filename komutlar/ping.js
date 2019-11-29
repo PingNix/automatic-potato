@@ -11,13 +11,13 @@ exports.run = (client, message, params) => {
             color: 0xD97634,
           
             title: "",
-            description: ` <a:discord:596887201384628238>  [Ping](https://ddiscord.gg/dN5cQ5Z) : **${Math.round(client.ping)}** ms \n :zap: Elimi Çabuk tutuyorum  :zap:`,
+            description: `[Ping] : **${Math.round(client.ping)}** ms \n :zap: Elimi Çabuk tutuyorum  :zap:`,
             fields: [
             ],
             timestamp: new Date(),
             footer: {
               icon_url: "",
-              text: "© MC-AT  Bot Tüm hakları saklıdır. by: TheMost#5681"
+              text: "ArdaDemr"
             }
           }
         });  

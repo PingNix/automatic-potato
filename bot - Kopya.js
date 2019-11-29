@@ -140,6 +140,8 @@ client.on('error', e => {
   console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
 });
 
+client.login(ayarlar.token);
+
 //------------------Message Kısmı Burayı silersen bot cevap vermez SON----------------// 
 
 //--------------------Sunucu İstatistik Kısmı ------------------//
@@ -405,7 +407,7 @@ message.guild.createChannel(`🎮》LOL`, 'voice')
         color: 'ORANGE',
       })
 
-       message.channel.send("<a:basarili:596886828762791948> | Gerekli Odalar Kuruldu!")
+       message.channel.send("Gerekli Odalar Kuruldu!")
      
             })   
     
@@ -413,33 +415,6 @@ message.guild.createChannel(`🎮》LOL`, 'voice')
 });
 
 //-------------------------Sunucu Kur Komudu SON-----------------------//
-
-
-//------------------------------AFK KOMUDU -----------------------//
-
-
-
-client.on("message", message => {
-  if(!message.guild) return
-    let afk_kullanici = message.mentions.users.first() || message.author;
-    if(message.content.startsWith(prefix + "afk")) return; 
-  if (message.author.bot === true) return;
-    if(message.content.includes(`<@${afk_kullanici.id}>`))
-        if(db.has(`afks_${afk_kullanici.id}`)) {
-                message.channel.send(`**${client.users.get(afk_kullanici.id).tag}** adlı kullanıcı şuanda AFK! \n**Sebep:** \n${db.fetch(`afks_${afk_kullanici.id}`)}`)
-        }
-  
-        if(db.has(`afks_${message.author.id}`)) {
-          var ism = message.member.diplayName
-            ism = ism
-          message.member.setNickname(message.author.username)
-                message.reply("Başarıyla AFK modundan Çıktın Hoşgeldin!")
-            db.delete(`afks_${message.author.id}`)
-        }
-  
-});
-
-//------------------------------AFK KOMUDU SON-----------------------//
 
 //----------------------------------lİNK ENGELLEME-----------------------------//
 
@@ -482,28 +457,6 @@ client.on("message", msg => {
 });
 
 //----------------------------------KÜFÜR ENGELLEME SON-----------------------------//
-
-//----------------------------------CAPSLOCK ENGELLEME-----------------------------//  
-client.on("message", async msg => {
-    if (msg.channel.type === "dm") return;
-      if(msg.author.bot) return;  
-        if (msg.content.length > 4) {
-         if (db.fetch(`capslock_${msg.guild.id}`)) {
-           let caps = msg.content.toUpperCase()
-           if (msg.content == caps) {
-             if (!msg.member.hasPermission("ADMINISTRATOR")) {
-               if (!msg.mentions.users.first()) {
-                 msg.delete()
-                 return msg.channel.send(`✋ ${msg.author}, Bu sunucuda, büyük harf kullanımı engellenmekte!`).then(m => m.delete(5000))
-     }
-       }
-     }
-   }
-  }
-});
-
-//----------------------------------CAPSLOCK ENGELLEME SON-----------------------------//  
-
 
 //----------------------------------EVERYONE ENGELLEME-----------------------------// 
 client.on("message", msg => {
@@ -652,171 +605,3 @@ client.on("guildMemberAdd", async member => {
                      
 
 //----------------------------------SAYAÇ SON-----------------------------// 
-
-//----------------------------------TAG-----------------------------// 
-
-client.on('guildMemberAdd', async member => {
-  
-  let tag = await db.fetch(`tag_${member.guild.id}`);
-  let tagyazi;
-  if (tag == null) tagyazi = member.setNickname(`${member.user.username}`)
-  else tagyazi = member.setNickname(`${tag} | ${member.user.username}`)
-});
-
-//----------------------------------TAG SON-----------------------------// 
-
-
-//----------------------------------PREMİUM EMOJİ İLE RENKLİ ROL-----------------------------// 
-
-const yourID = "Discord id yazınız"; 
-const setupCMD = "prefix + isim belirleyiniz örn: !!renklirol" 
-let initialMessage = `**Yazılara değil emojilere basınız**`; 
-const roles = ["kırmızı", "turuncu", "sarı", "mor", "siyah", "mavi"]; 
-const reactions = ["🔴", "🎃", "💛", "🍆", "🌑", "🔵"];
-const botToken = "Token girilecektir";  
-                   
-//Load up the bot...
-bot.login(botToken);
-//If there isn't a reaction for every role, scold the user!
-if (roles.length !== reactions.length) throw "Roles list and reactions list are not the same length!";
-//Function to generate the role messages, based on your settings
-function generateMessages(){
-    var messages = [];
-    messages.push(initialMessage);
-    for (let role of roles) messages.push(`Rol Almak İçin **"${role}"** Emojisine Tıkla!`); //DONT CHANGE THIS
-    return messages;
-}
-bot.on("message", message => {
-    if (message.author.id == yourID && message.content.toLowerCase() == setupCMD){
-        var toSend = generateMessages();
-        let mappedArray = [[toSend[0], false], ...toSend.slice(1).map( (message, idx) => [message, reactions[idx]])];
-        for (let mapObj of mappedArray){
-            message.channel.send(mapObj[0]).then( sent => {
-                if (mapObj[1]){
-                  sent.react(mapObj[1]);  
-                } 
-            });
-        }
-    }
-})
-bot.on('raw', event => {
-    if (event.t === 'MESSAGE_REACTION_ADD' || event.t == "MESSAGE_REACTION_REMOVE"){
-        
-        let channel = bot.channels.get(event.d.channel_id);
-        let message = channel.fetchMessage(event.d.message_id).then(msg=> {
-        let user = msg.guild.members.get(event.d.user_id);
-        
-        if (msg.author.id == bot.user.id && msg.content != initialMessage){
-       
-            var re = `\\*\\*"(.+)?(?="\\*\\*)`;
-            var role = msg.content.match(re)[1];
-        
-            if (user.id != bot.user.id){
-                var roleObj = msg.guild.roles.find(r => r.name === role);
-                var memberObj = msg.guild.members.get(user.id);
-                
-                if (event.t === "MESSAGE_REACTION_ADD"){
-                    memberObj.addRole(roleObj)
-                } else {
-                    memberObj.removeRole(roleObj);
-                }
-            }
-        }
-        })
- 
-    }   
-});
-
-
-//----------------------------------PREMİUM EMOJİ İLE RENKLİ ROL SON-----------------------------// 
-
-//----------------------------------ZAMANLI YAZI-----------------------------// 
-
-
-
-
-setInterval(() => {
-  client.channels.get("KANAL İD").send('MESAJIN')
-}, 60000)
-
-
-
-//----------------------------------ZAMANLI YAZI SON-----------------------------// 
-
-
-//----------------------------------KAYITOL-----------------------------// 
-
-client.on('guildMemberAdd', (member) => {
-    const db = require('quick.db'); 
-
-         const channelss = db.fetch(`kkanal_${member.guild.id}`).replace("<#", "").replace(">", "")
-
-       const kayıts = db.fetch(`ksistem_${member.guild.id}`)
-             if (kayıts == undefined) {
-             }
-            if (kayıts == 'acik') {
-             
-                          member.guild.channels.forEach(async (channel, id) => {
-                await channel.overwritePermissions(member, {
-                    VIEW_CHANNEL: false
-                });
-            });
-                          
-                 member.guild.channels.get(channelss).overwritePermissions(member, {
-                    SEND_MESSAGES: true,
-                    VIEW_CHANNEL: true
-                });
-            
-            }
-
-        
-  });
-   
-
-
-//----------------------------------KAYITOL SON-----------------------------// 
-
-
-function cpanel1() {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            client.channels.get(`KANALİD GİRİNİZ`).setName(`BU BOT`);
-            cpanel2();
-        }, 10000);
-      });
-}
-
-  function cpanel2() {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            client.channels.get(`KANALİD GİRİNİZ`).setName(`Elwasy#3071'E AİTTİR.`);
-            cpanel3();
-        }, 10000);
-      });
-  }
-  function cpanel3() {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            client.channels.get(`KANALİD GİRİNİZ`).setName(`KOMUTLAR CODARE SUNUCUSUNA AİTTİR.`);
-            cpanel4();
-        }, 10000); //Hızı düşürmeyin
-      });
-  }
-
-function cpanel4() {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            client.channels.get(`KANALİD GİRİNİZ`).setName(`İZİNSİZ PAYLAŞILMASI YASAKTIR `);
-            cpanel1();
-        }, 10000); //Hızı düşürmeyin
-      });
-  }
- 
- client.on('ready', async message => {
-   cpanel1();
- })
-
-
-
-client.login(ayarlar.token);
-
