@@ -25,6 +25,8 @@ exports.run = (client, message, params) => {
   .addField("**Botun Pingini Görme**", `{prefix}ping Botun Pingini Gösterir.`)
   .addField("**Kanal Bilgi**", `{prefix}uygunsuz , Uygunsuz İçerik Olup Olmadığını Belirtirsiniz.`)
   .addField("**Stres Çarkı Çevir**", `{prefix}stresçarkı , Stres Çarkı Çevirir.`)
+  .addField("**Slot Oyunu**", `{prefix}slots , Slot Oyunu.`)
+  .addField("**Wasted Efekti**", `{prefix}wasted , Profil Resmine Wasted Efekti Ekler.`)
   .setFooter('ArdaDemr Discord Bot')
 if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());
