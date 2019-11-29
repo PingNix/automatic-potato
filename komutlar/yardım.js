@@ -12,6 +12,13 @@ exports.run = (client, message, params) => {
   .addField("**Reklam Koruması**", `Link Engelleme Açmak İçin {prefix}link-engelle aç "kapatmak için" {prefix}link-engelle kapat`)
   .addField("**Everyone Koruması**", `Açmak için {prefix}everyone-engelle aç Kapatmak için {prefix}everyone-engelle kapat`)
   .addField("**Giriş Çıkış Ayarlaması**", `{prefix}giriş-çıkış-ayarla #kanal`)
+  .addField("**Hazır Sunucu**", `Hazır Sunucu Oluşturmak İçin {prefix}sunucu-kur`)
+  .addField("**Durum Reklam Taraması**", `Durumda Olan Reklamları Gösterir {prefix}reklam-taraması`)
+  .addField("**Slowmode**", `Sohbete Yavaşlık Ekler {prefix}slowmode 1/10`)
+  .addField("**Sohbet Temizleme**", `{prefix}temizle "sayı" Sohbet Temizler`)
+  .addField("**Bota Yazı Yazdırma**", `Bota Yazı Yazdırırsın {prefix}yaz "yazı" `)
+  .addField("**Sunucu Resmini Görme**", `{prefix}sunucuresmi Sunucunun Resmini Gösterir`)
+  .addField("**Avatarınızı Görme**", `{prefix}avatar [@etiket] Kişinin Profilini Gösterir`)
   .setFooter('AlleyCat Discord Bot')
 if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());

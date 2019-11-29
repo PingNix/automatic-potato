@@ -16,7 +16,7 @@ exports.run = (client, message, params) => {
     .setTimestamp()
     .setDescription('')
 		.setImage(`${message.guild.iconURL} `)
-    .setFooter(`© MC-AT Bot by: TheMost#5681 Tüm hakları saklıdır.`)
+    .setFooter(`ArdaDemr Bot`)
     return message.channel.sendEmbed(sunucubilgi);
     }
 };

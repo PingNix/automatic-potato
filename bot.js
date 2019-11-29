@@ -407,7 +407,7 @@ message.guild.createChannel(`🎮》LOL`, 'voice')
         color: 'ORANGE',
       })
 
-       message.channel.send("<a:basarili:596886828762791948> | Gerekli Odalar Kuruldu!")
+       message.channel.send("Gerekli Odalar Kuruldu!")
      
             })   
     
