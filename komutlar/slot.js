@@ -4,9 +4,6 @@ const { stripIndents } = require('common-tags');
 const slots = ['🍇', '🍊', '🍐', '🍒', '🍋'];
 
 exports.run = function(client, message) {
-message.delete(3000)
-if(message.channel.id !== "647615928397463594") return message.channel.send("Komutlarımız Sadece Komutlar Chatinde Çalışır.")
-.then(m=>m.delete(6000))
 
 	var slot1 = slots[Math.floor(Math.random() * slots.length)];
 	var slot2 = slots[Math.floor(Math.random() * slots.length)];

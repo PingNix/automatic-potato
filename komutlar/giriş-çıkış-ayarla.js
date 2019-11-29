@@ -10,7 +10,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu Kom
   
   let channel = message.mentions.channels.first()
     if (!channel) {
-        message.channel.send(':x: | Kullanım: `{prefix}giriş-çıkış-ayarla #kanal`')
+        message.channel.send('Kullanım: `{prefix}giriş-çıkış-ayarla #kanal`')
         return
     }
     if(!kanal[message.guild.id]){
