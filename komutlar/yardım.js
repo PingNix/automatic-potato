@@ -19,7 +19,13 @@ exports.run = (client, message, params) => {
   .addField("**Bota Yazı Yazdırma**", `Bota Yazı Yazdırırsın {prefix}yaz "yazı" `)
   .addField("**Sunucu Resmini Görme**", `{prefix}sunucuresmi Sunucunun Resmini Gösterir`)
   .addField("**Avatarınızı Görme**", `{prefix}avatar [@etiket] Kişinin Profilini Gösterir`)
-  .setFooter('AlleyCat Discord Bot')
+  .addField("**İstatistik**", `{prefix}istatistik ,Botun İstatistiğini Gösterir`)
+  .addField("**Oylama**", `{prefix}oylama "yazı" Oylama başlatır.`)
+  .addField("**Profilim**", `{prefix}profilim Profil Resmini Gösterir.`)
+  .addField("**Botun Pingini Görme**", `{prefix}ping Botun Pingini Gösterir.`)
+  .addField("**Kanal Bilgi**", `{prefix}uygunsuz , Uygunsuz İçerik Olup Olmadığını Belirtirsiniz.`)
+  .addField("**Stres Çarkı Çevir**", `{prefix}stresçarkı , Stres Çarkı Çevirir.`)
+  .setFooter('ArdaDemr Discord Bot')
 if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());
     message.channel.send(embedyardim);
