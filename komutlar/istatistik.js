@@ -18,9 +18,9 @@ module.exports.run = async(client, message, args) => {
     .addField(':desktop: Bellek kullanımı:', (process.memoryUsage().heapUsed / 2048 / 2048).toFixed(2))
     .addField(':book: Kütüphanesi;', `Discord.js`)
     .addField(`<:imagewqes:601526918961037313> Discord.js sürümü:`, Discord.version)
-      .addField(':spy: Yapımcım:', '<@407240241209147393> \n `TheMost#5681`')
+      .addField(':spy: Yapımcım:', '<@644319670454845461> \n `ArdaDemr#9881`')
       .addField(':paperclip: Botun Başlanma Zamanı:', "Bot **18.04.2019**'de yapılmaya başlanmıştır")
-    .setFooter('MC-AT Bot TheMost#5681', client.user.avatarURL)
+    .setFooter('ArdaDemr Bot', client.user.avatarURL)
     .setTimestamp()
     message.channel.send(embed);
 }

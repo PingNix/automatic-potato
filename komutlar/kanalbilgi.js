@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
                 embed.addField('Oluşturulduğu Tarih:', moment(message.channel.createdAt).format('DD/MM/YYYY'), true)
                 .setColor(3447003)
                 .setThumbnail(message.guild.iconURL)
-                .setFooter(`© Mythia Bot Tüm hakları saklıdır. `,  client.user.avatarURL)
+                .setFooter(`ArdaDemr Bot`,  client.user.avatarURL)
             message.channel.send(embed)
 };
 
@@ -27,7 +27,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'kanalbilgi',
+  name: 'uygunsuz',
   description: 'Kanal ile ilgili bilgi verir.',
   usage: 'kanalbilgi'
 }
