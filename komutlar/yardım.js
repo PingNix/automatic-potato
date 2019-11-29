@@ -27,6 +27,7 @@ exports.run = (client, message, params) => {
   .addField("**Stres Çarkı Çevir**", `{prefix}stresçarkı , Stres Çarkı Çevirir.`)
   .addField("**Slot Oyunu**", `{prefix}slots , Slot Oyunu.`)
   .addField("**Wasted Efekti**", `{prefix}wasted , Profil Resmine Wasted Efekti Ekler.`)
+  .addField("**Sunucu İstatistik**", `{prefix}statayarla , Sunucu İstatistik.`)
   .setFooter('ArdaDemr Discord Bot')
 if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());

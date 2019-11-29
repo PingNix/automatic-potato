@@ -10,11 +10,11 @@
     "start": "node bot.js"
   },
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "discord.js": "^11.5.1",
     "chalk": "^2.4.2",
     "moment": "^2.24.0",
-    "jimp": "^0.8.5",
+    "jimp": "^0.9.1",
     "quick.db": "7.0.0b22",
     "common-tags": "^1.8.0",
     "figlet": "^1.2.4",
