@@ -11,10 +11,10 @@ if(message.channel.id !== "647615928397463594") return message.channel.send("Kom
   .setTitle("<a:sarisik:648204836596350986> AlleyCat Yardım Menüsü <a:sarisik:648204836596350986> ")
   .setDescription('')
   .setColor('RANDOM')
-  .addField("**Küfür Koruması**", ` <a:elmas:648204846951956480> **a.oyunlar** = Oyun Komutlarını Gösterir. <a:elmas:648204846951956480> `)
-  .addField("**Reklam Koruması**", ` <a:elmas:648204846951956480> **a.eğlence** = Eğlence Komutlarını Gösterir. <a:elmas:648204846951956480> `)
-  .addField("**Ana Komutlar**", ` <a:elmas:648204846951956480> **a.anakomutlar** = Botun Kullanabileceğiniz Ana Komutlarını Gösterir. <a:elmas:648204846951956480> `)
-  .addField("**Bilgilerimiz**", ` <a:elmas:648204846951956480> **a.bilgi** = Kendimiz Ve AlleyCat Hakkında Bilgileri Gösterir. <a:elmas:648204846951956480> `)
+  .addField("**Küfür Koruması**", `Küfür Engelleme Açmak İçin {prefix}küfür-engelle aç "kapatmak için" {prefix}küfür-engelle kapat`)
+  .addField("**Reklam Koruması**", `Link Engelleme Açmak İçin {prefix}link-engelle aç "kapatmak için" {prefix}link-engelle kapat`)
+  .addField("**Everyone Koruması**", `Açmak için .everyone-engelle aç Kapatmak için .everyone-engelle kapat`)
+  .addField("**Bilgilerimiz**", `Oyun Komutlarını Gösterir.`)
   .setFooter('AlleyCat Discord Bot')
 if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());

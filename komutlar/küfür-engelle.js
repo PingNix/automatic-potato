@@ -18,7 +18,7 @@ exports.run = (client, message) => {
 	.addField(`Doğru Kullanım:`, `${ayarlar.prefix}küfür-engelle aç veya kapat`)
 	if(secenekler.length < 1) return message.channel.send(errembed);
 	//if(secenekler === "aç" || "kapat") return message.channel.send(errembed);
-  	if(secenekler.length < 1) return message.reply("Link Engelleme Açmak İçin `g!!küfür-engelle aç` kapatmak için `g!küfür-engelle kapat`").then(m => m.delete(10000));
+  	if(secenekler.length < 1) return message.reply("Küfür Engelleme Açmak İçin `g!!küfür-engelle aç` kapatmak için `g!küfür-engelle kapat`").then(m => m.delete(10000));
 
     message.delete();
 
