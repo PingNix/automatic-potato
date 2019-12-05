@@ -6,7 +6,7 @@ var prefix = ayarlar.prefix;
 
 const girismesaj = [
   '**Bot Sunucuya Eklendi',
-  '**Elwasy Bot** sunucunuzdaki insanlara kolaylıklar sağlar.',
+  '**ArdaDemr Bot** sunucunuzdaki insanlara kolaylıklar sağlar.',
   'Botta Her Türlü Komut Vardır'
 ]
 
