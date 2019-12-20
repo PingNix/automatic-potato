@@ -38,7 +38,7 @@ const log = message => {
 };
 
 client.on("ready", () => {
-  client.user.setGame(`"ArdaDemr Youtube"`, "https://www.twitch.tv/alleycatts");
+  client.user.setGame(`"ArdaDemr Youtube"`, "https://www.twitch.tv/fyukas");
         }, 
   console.log("Bağlandım!")
 );
