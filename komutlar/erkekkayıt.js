@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args, member, client, level) => {
   if (!message.member.roles.find('name', 'Botunuzunİsmi Bot Komut | 🤖')) return message.channel.send('Yetkin yetmiyor.');
   let user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if (!user) return message.reply("**Etiket Atmayı Unuttun!**");
-  user.addRole('662972242669469706')
+  user.addRole('662972177104109568')
   user.removeRole('662284863751061524')
 const ky = new Discord.RichEmbed()
         .setAuthor(message.author.tag, message.author.avatarURL)
@@ -16,15 +16,16 @@ const ky = new Discord.RichEmbed()
         .setTimestamp()
         message.channel.send(ky)
         message.react(dogrulandi)
+  
 } 
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: [],
+    aliases: ["erkek"],
     permLevel: 0
 }
 exports.help = {
-    name: 'kız',
-    description: 'kız',
-    usage: 'kız'
+    name: 'erkek',
+    description: 'erkek',
+    usage: 'erkek'
 }
