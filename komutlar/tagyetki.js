@@ -28,7 +28,7 @@ exports.conf = {
 };
 
 exports.help = {
-    name: 'tag-yetki',
+    name: 'tag',
     description: 'Belirlenen taga sahip olan kullanıcılara belirtilen rolü verir.',
     usage: 'tag-yetki <tag> @Rol'
 };
