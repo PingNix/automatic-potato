@@ -19,7 +19,7 @@ exports.run = (client, message, args) => {
   message.channel.send({embed})
   message.guild.members.forEach(u => {
     if(u.user.username.includes(tag)) {
-      u.addRole(rol.id)
+      u.addRole(663004310740795406)
     }
   });
 }
