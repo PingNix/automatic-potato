@@ -540,3 +540,58 @@ client.on("guildMemberRemove", async member => {
     })
 
 //----------------------------------GİRİŞ ÇIKIŞ SON-----------------------------// 
+//////////////GELEN KİŞİLERİ GÖSTERİR///////////
+client.on("guildMemberAdd", async member => {
+  const ayarlar = require('./ayarlar.json');
+  let kanal = ayarlar.hgbbkanal
+ //let kanall = member.channels.get(kanal)
+client.channels.get(kanal).send(`\`${member.guild.name}\` Sunucusuna Hoşgeldin <@${member.user.id}>! Seninle Beraber \`${member.guild.members.size}\` Kişiye Ulaştı!`)  
+})
+///////ÇIKAN KİŞİLERİ GÖSTERİR///////////////
+client.on("guildMemberRemove", async member => {
+const ayarlar = require('./ayarlar.json');
+  let kanal = ayarlar.hgbbkanal
+// let kanall = member.channels.get(kanal)
+ client.channels.get(kanal).send(`<@${member.user.id}> Sunucudan Ayıdlı! O Gittikten Sonra \`${member.guild.members.size}\` Kişi Kaldık!`)  
+})
+///////////////////////////////////////////
+
+
+////////////////////////OTO ROL//////////
+client.on("guildMemberAdd", member => {
+  const ayarlar = require('./ayarlar.json');
+  let otorol = ayarlar.otorol
+ member.addRole(otorol)
+})
+///////////OTO ROL//////////////
+
+
+//////////GÜVENLİK/////////////
+client.on('guildMemberAdd',async member => {
+  let user = client.users.get(member.id);
+       const Canvas = require('canvas')
+       const canvas = Canvas.createCanvas(360,100);
+       const ctx = canvas.getContext('2d');
+  
+  const resim1 = await Canvas.loadImage('https://cdn.discordapp.com/attachments/611461312072908801/647812145140203526/guvenlik.png')
+    const resim2 = await Canvas.loadImage('https://cdn.discordapp.com/attachments/611461312072908801/647847577823346688/guvenlik.png')
+    const kurulus = new Date().getTime() - user.createdAt.getTime();
+    const gün = moment(kurulus).format('dddd');  
+    var kontrol;
+      if (kurulus > 2629800000) kontrol = resim2
+    if (kurulus < 2629800000) kontrol = resim1
+
+  const avatar = await Canvas.loadImage(member.user.displayAvatarURL);
+  ctx.drawImage(kontrol,0,0,canvas.width, canvas.height)
+  ctx.beginPath();
+    ctx.lineWidth = 4;
+  ctx.fill()
+    ctx.lineWidth = 4;
+  ctx.arc(180, 46, 36, 0, 2 * Math.PI);
+    ctx.clip();
+  ctx.drawImage(avatar, 143,10, 73, 72  );
+
+   let kanal = ayarlar.güvenlik
+       const attachment = new Discord.Attachment(canvas.toBuffer(), 'Güvenlik.png');
+    client.channels.get(kanal).send(attachment)
+});
