@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const moment = require('moment')
 const client = new Discord.Client();
 
-const botadi = "Botunuzun Adı"
+const botadi = "MAGİC"
 
 exports.run = async (bot, msg, args) => {
  
@@ -84,7 +84,7 @@ exports.run = async (bot, msg, args) => {
         .addField(`Botmu:`, userinfo.bot, true)
         .addField(`Roller:`, `${msg.guild.members.get(user.id).roles.filter(r => r.name !== "@everyone").map(r => r).join(' **|** ') || "**Bu kullanıcıda hiçbir rol bulunmuyor**"}`, false)
         .addField(`Son gönderdiği mesaj:`, userinfo.sonmesaj, false)
-        .setFooter(`ArdaDemr || Kullanıcı Bilgi Sistemi`)
+        .setFooter(`magic || Kullanıcı Bilgi Sistemi`)
         msg.channel.send(uembed)
     }
 
