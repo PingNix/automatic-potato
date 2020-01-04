@@ -13,9 +13,9 @@ module.exports = client => {
         "MAGİC izliyor.",
         "KAYIT OLMAK İÇİN TEYİTE GEÇİN",
         "TAGA ROL AYARLANACAK",
-        "YETKİKİ ARANIYOR",
+        "YETKİLİ ARANIYOR",
         "MGC AİLESİNE HOŞGELDİNİZ",
-        "PARTNWR ARANIYOR",
+        "PARTNER ARANIYOR",
         "FİLİM İZLİYOR afk."
     ];
 
