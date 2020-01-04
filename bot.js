@@ -1,4 +1,3 @@
-const express = require('express');
 const app = express();
 const http = require('http');
     app.get("/", (request, response) => {
@@ -620,3 +619,17 @@ if(nev.username.includes(emingTag) && !client.guilds.get(emingSunucu).members.ge
      
   }
   });
+var codeming = ["Slm", "sa", "selam", "seleme" ,"selm" ,"slam", "merhaba", "mrb" , "merhb", "merhab", "merhaba", "mrhab", "mrhb", "ben geldim", "bn gldm", "ben gldm", "selamlar", "selmlar", "slmlr", "selamlr", "slamlr", "slamlar", "selamun aleykum", "selamun aleyküm"]
+
+
+client.on("message", async message => {
+  var mlynstax = db.fetch(`golduye.codeeming_${message.author.id}`)
+  if(!mlynstax) return;
+  if(codeming.some(umutbaba => message.content.toLowerCase() === umutbaba)) return await message.channel.send({embed: {
+   color: 8552,
+   description: (`:small_blue_diamond: :punch: Vayyy Aramızda Bir Gold Üye Varmış  ${message.author.tag}  :punch: :small_blue_diamond: `)
+    
+}
+})
+})
+  
