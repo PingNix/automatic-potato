@@ -3,23 +3,19 @@ const ayarlar = require('../ayarlar.json')
 
 exports.run = (client, message, args) => {
   
-  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(`Bu komutu kullanabilmek için **Mesajları Yönet** iznine sahip olmalısın!`);
+  if (!message.member.hasPermission("MANAGE_GUILD")) return message.reply(`Bu komutu kullanabilmek için \`Sunucuyu Yönet\` iznine sahip olmalısın.`);
   
   const tag = args[0]
   let rol = message.mentions.roles.first()
   const memberss = message.guild.members.filter(member => member.user.username.includes(tag));
   
-  if(!tag) return message.reply(`:warning: Bir Tag Girmelisiniz Örnek Kullanım; \n \`${ayarlar.prefix}tag-yetki tag @rol\``)
-  if(!rol) return message.reply(`:warning: Bir Rol Girmelisiniz Örnek kullanım; \n \`${ayarlar.prefix}tag-yetki tag @rol\``)
+  if(!tag) return message.channel.send(`Bir tag girmelisin. \`${ayarlar.prefix}tag-yetki <tag> @Rol\``)
+  if(!rol) return message.channel.send(`Bir rol girmelisin. \`${ayarlar.prefix}tag-yetki ${tag} @Rol\``)
   
-  
-  const embed = new Discord.RichEmbed()
-  .addField(`Kullanıcı Adında ${tag} Tagı Olan Kullanıcılara Yetkilerini Veriyorum...`, memberss.map(member => `${member} = ${member.user.username}`).join("\n") || `Kimsenin kullanıcı Adında \`${tag}\` Tagı Bulunmuyor.`)
-  .setColor("RANDOM")
-  message.channel.send({embed})
+  message.channel.send(`Kullanıcı adında ${tag} olan kişilere etiketlediğin rolü veriyorum.`, memberss.map(member => `${member} = ${member.user.username}`).join("\n") || `Kimsenin kullanıcı adında \`${tag}\` bulunmuyor.`)
   message.guild.members.forEach(u => {
     if(u.user.username.includes(tag)) {
-      u.addRole(663004310740795406)
+      u.addRole(rol.id)
     }
   });
 }
@@ -27,12 +23,12 @@ exports.run = (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: true,
-    aliases: ['taga-yetki-ver', 'tagayetkiver', 'tagyetki', 'tagayetki', 'taga-yetki'],
+    aliases: [],
     permLevel: 0
-}
+};
 
 exports.help = {
-    name: 'tag-yetki',
-    description: 'Kullanıcıların kullanıcı adını tarayıp onlara yetki verir.',
-    usage: 'tag-yetki <tag> <rol>'
-}
+    name: 'tag',
+    description: 'Belirlenen taga sahip olan kullanıcılara belirtilen rolü verir.',
+    usage: 'tag-yetki <tag> @Rol'
+};
