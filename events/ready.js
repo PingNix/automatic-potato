@@ -10,13 +10,13 @@ module.exports = client => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: ${client.user.username} ismi ile giriş yapıldı!`);
   client.user.setStatus("online");
    var oyun = [
-        "ArdaDemr Youtube",
-        "ArdaDemr Youtube",
-        "ArdaDemr Youtube",
-        "ArdaDemr Youtube",
-        "ArdaDemr Youtube",
-        "ArdaDemr Youtube",
-        "ArdaDemr Youtube"
+        "MAGİC izliyor.",
+        "KAYIT OLMAK İÇİN TEYİTE GEÇİN",
+        "TAGA ROL AYARLANACAK",
+        "YETKİKİ ARANIYOR",
+        "MGC AİLESİNE HOŞGELDİNİZ",
+        "PARTNWR ARANIYOR",
+        "FİLİM İZLİYOR afk."
     ];
 
     setInterval(function() {
