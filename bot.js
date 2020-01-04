@@ -618,3 +618,5 @@ if(nev.username.includes(emingTag) && !client.guilds.get(emingSunucu).members.ge
      client.channels.get(emingKanal).send(`:anger: **${nev}, İsminden \`${emingTag}\`'ı çıkardığı için <@&${emingRol}> rolünü kaybetti.**`)
     } 
      
+  }
+  });
