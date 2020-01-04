@@ -620,3 +620,19 @@ if(nev.username.includes(emingTag) && !client.guilds.get(emingSunucu).members.ge
      
   }
   });
+
+uç = sayaurn
+  ///....
+  
+  if(!bbmsj) {
+    client.channels.get(kanal).send(':loudspeaker: :outbox_tray: Kullanıcı Ayrıldı. `'+sayaç+'` Kişi Olmamıza `'+sonuç+'` Kişi Kaldı `'+member.guild.memberCount+'` Kişiyiz! a:iptal:626445972620443648>  `'+member.user.username+'`')
+  return
+  }
+  
+  if(bbmsj) {
+ var mesajs = await db.fetch(`sayacbbmsj_${member.guild.id}`).replace("-uye-", `${member.user.tag}`).replace("-server-",  `${member.guild.name}`).replace("-uyesayisi-", `${member.guild.memberCount}`).replace("-botsayisi-",  `${member.guild.members.filter(m => m.user.bot).size}`).replace("-bolge-", `${member.guild.region}`).replace("-kanalsayisi-",  `${member.guild.channels.size}`).replace("-kalanuye-", `${sonuç}`).replace("-hed.send(mesajs) 
+ }
+  
+  
+  
+  })
