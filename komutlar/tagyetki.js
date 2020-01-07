@@ -32,3 +32,6 @@ exports.help = {
     description: 'Belirlenen taga sahip olan kullanıcılara belirtilen rolü verir.',
     usage: 'tag-yetki <tag> @Rol'
 };
+// arkadaşlar bunları linkte verecem siz buraya gelip sadece ayarlamaları yapın yete
+// kız ve erkeği kayıt etmek için rol verme yetkisini açınnız
+// tag ayarlamak için tagınızı koyup suncu id yazıp kanal id yazıp yerlerine yapıştirınız.

@@ -660,3 +660,5 @@ client.on('message', message => {
     });
   }
 });
+//taga buradan ayarlıyacak sınız ama bir sorun var rol vermiyor ennyakın zaman da ayarlıyım sizlere sunacam
+//sunucuya gecelim.
