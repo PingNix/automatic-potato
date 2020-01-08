@@ -634,8 +634,8 @@ client.on("message", message => {
     }
 });
 client.on('message', message => {
-  let tag = "𑀫"; //tagınızı yazın
-  let rol = "663034696556609540"; //tag alındığı zaman verilecek rolün ID-si
+  let tag = "∿"; //tagınızı yazın
+  let rol = "664499794206785536"; //tag alındığı zaman verilecek rolün ID-si
   let channel = message.guild.channels.find('taga-rol', 'taga-rol'); //tagrol-log yerine kendi kanalınızın ismini yaza bilirsiniz
   if (!rol) return;
   if (!tag) return;
