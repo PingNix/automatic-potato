@@ -6,12 +6,12 @@ module.exports.run = async (bot, message, args, member, client, level) => {
   if (!message.member.hasPermission("MANAGE_ROLES"))
   if (!message.member.roles.find('name', 'Botunuzunİsmi Bot Komut | 🤖')) return message.channel.send('Yetkin yetmiyor.');
   let user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-  if (!user) return message.reply("**Etiket Atmayı Unuttun!**");
-  user.addRole('662283801367412756')
-  user.removeRole('662284863751061524')
+  if (!user) return message.reply("${user}**LAN ETİKET ATMAYINUNUTMAYIN KAÇKERE DEYECEM !**");
+  user.addRole('664506498897936389')
+  user.removeRole('664506633702998032')
 const ky = new Discord.RichEmbed()
         .setAuthor(message.author.tag, message.author.avatarURL)
-        .setDescription(`${user}, **Kaydınız Başarıyla Gerçekleşti! İyi Eğlenceler.**`)
+        .setDescription(`${user}, ** KAYDIN OLUŞTURULMUŞTUR! İYİ EĞLENCELER.SIRADAKİ GELSİN.**`)
         .setColor('BLACK')
         .setTimestamp()
         message.channel.send(ky)
