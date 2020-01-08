@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args, member, client, level) => {
   let user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if (!user) return message.reply("**Etiket Atmayı Unuttun!**");
   user.addRole('664506733108133888')
-  user.removeRole('')
+  user.removeRole('664506633702998032')
 const ky = new Discord.RichEmbed()
         .setAuthor(message.author.tag, message.author.avatarURL)
         .setDescription(`${user}, **Kaydınız Başarıyla Gerçekleşti! İyi Eğlenceler.**`)
