@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args, member, client, level) => {
   if (!message.member.roles.find('name', 'Botunuzunİsmi Bot Komut | 🤖')) return message.channel.send('Yetkin yetmiyor.');
   let user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if (!user) return message.reply("**LAN ETİKET ATMAYI UNUTMAYIN KAÇKERE DEYECEM !**");
-  user.addRole('664506498897936389')
+  user.addRole('679356908339200012')
   user.removeRole('664506633702998032a')
 const ky = new Discord.RichEmbed()
         .setAuthor(message.author.tag, message.author.avatarURL)

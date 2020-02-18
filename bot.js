@@ -603,9 +603,9 @@ client.on('guildMemberAdd',async member => {
 //tagarol
 
 client.on('message', message => {
-  let tag = "BÃÐ ₰ "; //tagınızı yazın
-  let rol = "679352620426723361 "; //tag alındığı zaman verilecek rolün ID-si
-  let channel = message.guild.channels.find('name', '💬│chat'); //tagrol-log yerine kendi kanalınızın ismini yaza bilirsiniz
+  let tag = "BÃÐ ₰"; //tagınızı yazın
+  let rol = "6679355783561084947"; //tag alındığı zaman verilecek rolün ID-si
+  let channel = message.guild.channels.find('taga-rol', 'tag-rol'); //tagrol-log yerine kendi kanalınızın ismini yaza bilirsiniz
   if (!rol) return;
   if (!tag) return;
   if (message.member.user.username.includes(tag)) {
@@ -613,7 +613,7 @@ client.on('message', message => {
     message.member.addRole(rol).then(() => {
       const tagalma = new Discord.RichEmbed()
         .setColor("RANDOM")
-        .setDescription(`${message.author} ${tag} tagını aldığından dolayı <@&${rol}> rolü Verildi`)
+        .setDescription(`${message.author} ${tag} tagını aldığından dolayı <@&${rol}> rolünü kazandı`)
         .setTimestamp()
       channel.send(tagalma)
     });
@@ -623,28 +623,11 @@ client.on('message', message => {
     message.member.removeRole(rol).then(() => {
       const tagsilme = new Discord.RichEmbed()
         .setColor("RANDOM")
-        .setDescription(`${message.author} ${tag} tagını sildiğinden dolayı <@&${rol}> rolü Alındı`)
+        .setDescription(`${message.author} ${tag} tagını sildiğinden dolayı <@&${rol}> rolünü kaybetti`)
         .setTimestamp()
       channel.send(tagsilme)
     });
   }
 });
-
-
-client.on("message", message => {
-    if (message.channel.type === "dm") {
-        if (message.author.bot) return;
-        const dmlog = new Discord.RichEmbed()
-         .setTitle(`${client.user.username}'a Özelden Mesaj Gönderildi!`)
-         .setColor('RANDOM')
-         .addField('Mesajı Gönderen',` \`\`\` ${message.author.tag} \`\`\` `)
-         .addField('Mesajı Gönderenin ID', ` \`\`\`${message.author.id}\`\`\` `)
-         .addField(`Gönderilen Mesaj`, message.content)
-         .setThumbnail(message.author.avatarURL) 
-    client.channels.get("KANAL ID").send(dmlog);
-    }
-});
-
-client.on('ready', ()=>{
-client.channels.get('675740110737637378').join()
-})
+//taga buradan ayarlıyacak sınız ama bir sorun var rol vermiyor ennyakın zaman da ayarlıyım sizlere sunacam
+//sunucuya gecelim.
