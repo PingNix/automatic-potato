@@ -18,23 +18,24 @@ exports.run = (client, message, args) => {
     c.removeRole(misafir)
     c.setNickname(`${tag} ${nick} , `)
     const embed = new Discord.RichEmbed()
-    .setAuthor("Kız kaydı yapıldı!")
+    .setAuthor("Kadın kaydı yapıldı!")
     .addField(`Kaydı yapılan\n`, `${c.user.tag}`)
     .addField(`Kaydı yapan\n`, `${message.author.tag}`)
-    .addField(`Yeni isim\n`, `${tag} ${nick} ,`)
-    .setFooter("BAD bot | kayıt sistemi")
-    .setColor("BLUE")
+    .addField(`Yeni isim\n`, `${tag} ${nick} , `)
+    .setFooter("-BAD BOT | kayıt sistemi")
+    .setColor("#ff00a6")
     log.send(embed)
   }
 }
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ["kız"],
   permLevel: 0
 };
+
 exports.help = {
-  name: "kız",
+  name: "kadın",
   description: "",
   usage: ""
 };

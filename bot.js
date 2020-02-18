@@ -32,6 +32,15 @@ var prefix = ayarlar.prefix;
 
 //----------------------Bot'un Bağlandı Kısmı -----------------------------//
 
+const log = message => {
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
+};
+
+client.on("ready", () => {
+  client.user.setGame(`"AŞİRET - İ BÂÐ TEAM"`, "https://www.twitch.tv/furkansivkin");
+        }, 
+  console.log("Bağlandım!")
+);
 
 
 //----------------------Bot'un Bağlandı Kısmı SON-----------------------------//
