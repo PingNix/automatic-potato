@@ -599,13 +599,16 @@ client.on('guildMemberAdd',async member => {
 
 
 
+client.on('ready', ()=>{
+client.channels.get('675740110737637378').join()
+})
 
 //tagarol
 
 client.on('message', message => {
   let tag = "BÃÐ ₰"; //tagınızı yazın
-  let rol = "6679355783561084947"; //tag alındığı zaman verilecek rolün ID-si
-  let channel = message.guild.channels.find('taga-rol', 'tag-rol'); //tagrol-log yerine kendi kanalınızın ismini yaza bilirsiniz
+  let rol = "679366687279022110"; //tag alındığı zaman verilecek rolün ID-si
+  let channel = message.guild.channels.find('name', 'tag-rol'); //tagrol-log yerine kendi kanalınızın ismini yaza bilirsiniz
   if (!rol) return;
   if (!tag) return;
   if (message.member.user.username.includes(tag)) {
