@@ -605,32 +605,23 @@ client.channels.get('675740110737637378').join()
 
 //tagarol
 
-client.on('message', message => {
-  let tag = "BÃÐ ₰"; //tagınızı yazın
-  let rol = "679366687279022110"; //tag alındığı zaman verilecek rolün ID-si
-  let channel = message.guild.channels.find('name', 'tag-rol'); //tagrol-log yerine kendi kanalınızın ismini yaza bilirsiniz
-  if (!rol) return;
-  if (!tag) return;
-  if (message.member.user.username.includes(tag)) {
-    if (message.member.roles.has(rol)) return;
-    message.member.addRole(rol).then(() => {
-      const tagalma = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setDescription(`${message.author} ${tag} tagını aldığından dolayı <@&${rol}> rolünü kazandı`)
-        .setTimestamp()
-      channel.send(tagalma)
-    });
+client.on("userUpdate", async(old, nev) => {
+let emingSunucu = "673699337456582676" //Sunucu ID
+let emingKanal = "679356005913460787" //BILGI KANAL ID
+let emingRol = "673809151079743508" //ROL ID
+let emingTag = "BÃÐ ₰" //TAG 
+if(old.username !== nev.username) {
+  
+if(nev.username.includes(emingTag) && !client.guilds.get(emingSunucu).members.get(nev.id).roles.has(emingRol)) {
+      client.channels.get(emingKanal).send(`:tada: **${nev}, İsmine \`${emingTag}\` eklediği için <@&${emingRol}> rolünü kazandı.**`) 
+      client.guilds.get(emingSunucu).members.get(nev.id).addRole(emingRol)
+     }
+  if(!nev.username.includes(emingTag) && client.guilds.get(emingSunucu).members.get(nev.id).roles.has(emingRol)) {
+     client.guilds.get(emingSunucu).members.get(nev.id).removeRole(emingRol)
+     client.channels.get(emingKanal).send(`:anger: **${nev}, İsminden \`${emingTag}\`'ı çıkardığı için <@&${emingRol}> rolünü kaybetti.**`)
+    } 
+     
   }
-  if (!message.member.user.username.includes(tag)) {
-    if (!message.member.roles.has(rol)) return;
-    message.member.removeRole(rol).then(() => {
-      const tagsilme = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setDescription(`${message.author} ${tag} tagını sildiğinden dolayı <@&${rol}> rolünü kaybetti`)
-        .setTimestamp()
-      channel.send(tagsilme)
-    });
-  }
-});
+  });
 //taga buradan ayarlıyacak sınız ama bir sorun var rol vermiyor ennyakın zaman da ayarlıyım sizlere sunacam
 //sunucuya gecelim.

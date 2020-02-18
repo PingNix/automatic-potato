@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const db = require('quick.db');
 exports.run = (client, message, args) => {
-  const kayıtlı = message.guild.roles.find(r => r.id === "679396798670045250"); //buraya erkek rolünüzün id'sini koyun
-  const misafir = message.guild.roles.find(r => r.id === "679396902449446984"); //buraya misafir rolünüzün id'sini koyun.
+  const kayıtlı = message.guild.roles.find(r => r.id === "673707364032970772"); //buraya erkek rolünüzün id'sini koyun
+  const misafir = message.guild.roles.find(r => r.id === "673707957858467881"); //buraya misafir rolünüzün id'sini koyun.
   const log = message.guild.channels.find(c => c.id === "673705070789001246"); //buraya kayıt log id koyun
   const tag = "🥏❜";
   if(!message.member.roles.array().filter(r => r.id === "673706812800892932")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
