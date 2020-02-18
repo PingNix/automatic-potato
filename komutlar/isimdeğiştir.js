@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
   if(!isim) return message.reply(`:warning: Lütfen bir kullanıcı adı giriniz! \nDoğru Kullanım; \`${prefix}nick @${client.user.username}#${client.user.discriminator} <yeni isim>\``)
   if(isim.length > 32) return message.reply(`:warning: Lütfen \`32\` karakteri Geçmeyecek Şekilde Bir İsim Giriniz!`)
   message.guild.members.get(kullanici.id).setNickname(`${isim}`)
-  message.channel.send(`\`${kullanici.username}\` adlı kişinin kullanıcı adı \`${isim}\` olarak başarıyla değiştirildi. :white_check_mark:`)
+  message.channel.send(`\`${kullanici.username}\` adlı kişinin kullanıcı adı \`🥏❜${isim}\` olarak başarıyla değiştirildi. :white_check_mark:`)
 }
 exports.conf = {
     enabled: true,
