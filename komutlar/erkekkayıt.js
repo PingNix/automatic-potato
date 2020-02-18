@@ -4,11 +4,11 @@ module.exports.run = async (bot, message, args, member, client, level) => {
   const dogrulandi = bot.emojis.find(emoji => emoji.name === "emojiismi");
   if (!message.member.hasPermission("ADMINISTRATOR"))
   if (!message.member.hasPermission("MANAGE_ROLES"))
-  if (!message.member.roles.find('name', 'Botunuzunİsmi Bot Komut | 🤖')) return message.channel.send('Yetkin yetmiyor.');
+  if (!message.member.roles.find('name', ' | 🤖')) return message.channel.send('Yetkin yetmiyor.');
   let user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if (!user) return message.reply("**LAN ETİKET ATMAYI UNUTMAYIN KAÇKERE DEYECEM !**");
   user.addRole('679356908339200012')
-  user.removeRole('664506633702998032a')
+  user.removeRole('679357020280848415')
 const ky = new Discord.RichEmbed()
         .setAuthor(message.author.tag, message.author.avatarURL)
         .setDescription(`${user}, ** KAYDIN OLUŞTURULMUŞTUR! İYİ EĞLENCELER.SIRADAKİ GELSİN.**`)
