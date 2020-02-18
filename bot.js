@@ -602,24 +602,35 @@ client.on('guildMemberAdd',async member => {
 
 //tagarol
 
-client.on("userUpdate", async(old, nev) => {
-let emingSunucu = "661999776350470155" //Sunucu ID
-let emingKanal = "662985627251245084" //BILGI KANAL ID
-let emingRol = "663036138163929098" //ROL ID
-let emingTag = "∿" //TAG 
-if(old.username !== nev.username) {
-  
-if(nev.username.includes(emingTag) && !client.guilds.get(emingSunucu).members.get(nev.id).roles.has(emingRol)) {
-      client.channels.get(emingKanal).send(`:tada: **${nev}, İsmine \`${emingTag}\` eklediği için <@&${emingRol}> rolünü kazandı.**`) 
-      client.guilds.get(emingSunucu).members.get(nev.id).addRole(emingRol)
-     }
-  if(!nev.username.includes(emingTag) && client.guilds.get(emingSunucu).members.get(nev.id).roles.has(emingRol)) {
-     client.guilds.get(emingSunucu).members.get(nev.id).removeRole(emingRol)
-     client.channels.get(emingKanal).send(`:anger: **${nev}, İsminden \`${emingTag}\`'ı çıkardığı için <@&${emingRol}> rolünü kaybetti.**`)
-    } 
-     
+client.on('message', message => {
+  let tag = "BÃÐ ₰ "; //tagınızı yazın
+  let rol = "679352620426723361 "; //tag alındığı zaman verilecek rolün ID-si
+  let channel = message.guild.channels.find('name', '💬│chat'); //tagrol-log yerine kendi kanalınızın ismini yaza bilirsiniz
+  if (!rol) return;
+  if (!tag) return;
+  if (message.member.user.username.includes(tag)) {
+    if (message.member.roles.has(rol)) return;
+    message.member.addRole(rol).then(() => {
+      const tagalma = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setDescription(`${message.author} ${tag} tagını aldığından dolayı <@&${rol}> rolü Verildi`)
+        .setTimestamp()
+      channel.send(tagalma)
+    });
   }
-  });
+  if (!message.member.user.username.includes(tag)) {
+    if (!message.member.roles.has(rol)) return;
+    message.member.removeRole(rol).then(() => {
+      const tagsilme = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setDescription(`${message.author} ${tag} tagını sildiğinden dolayı <@&${rol}> rolü Alındı`)
+        .setTimestamp()
+      channel.send(tagsilme)
+    });
+  }
+});
+
+
 client.on("message", message => {
     if (message.channel.type === "dm") {
         if (message.author.bot) return;
@@ -633,32 +644,7 @@ client.on("message", message => {
     client.channels.get("KANAL ID").send(dmlog);
     }
 });
-client.on('message', message => {
-  let tag = "∿"; //tagınızı yazın
-  let rol = "664499794206785536"; //tag alındığı zaman verilecek rolün ID-si
-  let channel = message.guild.channels.find('taga-rol', 'taga-rol'); //tagrol-log yerine kendi kanalınızın ismini yaza bilirsiniz
-  if (!rol) return;
-  if (!tag) return;
-  if (message.member.user.username.includes(tag)) {
-    if (message.member.roles.has(rol)) return;
-    message.member.addRole(rol).then(() => {
-      const tagalma = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setDescription(`${message.author} ${tag} tagını aldığından dolayı <@&${rol}> rolünü kazandı`)
-        .setTimestamp()
-      channel.send(tagalma)
-    });
-  }
-  if (!message.member.user.username.includes(tag)) {
-    if (!message.member.roles.has(rol)) return;
-    message.member.removeRole(rol).then(() => {
-      const tagsilme = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setDescription(`${message.author} ${tag} tagını sildiğinden dolayı <@&${rol}> rolünü kaybetti`)
-        .setTimestamp()
-      channel.send(tagsilme)
-    });
-  }
-});
-//taga buradan ayarlıyacak sınız ama bir sorun var rol vermiyor ennyakın zaman da ayarlıyım sizlere sunacam
-//sunucuya gecelim.
+
+client.on('ready', ()=>{
+client.channels.get('675740110737637378').join()
+})

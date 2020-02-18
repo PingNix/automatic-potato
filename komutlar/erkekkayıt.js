@@ -21,7 +21,7 @@ const ky = new Discord.RichEmbed()
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ["erkek"],
+    aliases: ["erkek,e"],
     permLevel: 0
 }
 exports.help = {
