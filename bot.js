@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const http = require('http');
     app.get("/", (request, response) => {
-    console.log(`Youtube ArdaDemr | Bot Hostlandı.`);
+    console.log(`Bad Team | Bot Hostlandı.`);
     response.sendStatus(200);
     });
     app.listen(process.env.PORT);
@@ -33,15 +33,6 @@ var prefix = ayarlar.prefix;
 //----------------------Bot'un Bağlandı Kısmı -----------------------------//
 
 
-const log = message => {
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
-};
-
-client.on("ready", () => {
-  client.user.setGame(`"ArdaDemr Youtube"`, "https://www.twitch.tv/fyukas");
-        }, 
-  console.log("Bağlandım!")
-);
 
 //----------------------Bot'un Bağlandı Kısmı SON-----------------------------//
 
