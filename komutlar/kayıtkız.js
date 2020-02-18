@@ -4,23 +4,24 @@ module.exports.run = async (bot, message, args, member, client, level) => {
   const dogrulandi = bot.emojis.find(emoji => emoji.name === "emojiismi");
   if (!message.member.hasPermission("ADMINISTRATOR"))
   if (!message.member.hasPermission("MANAGE_ROLES"))
-  if (!message.member.roles.find('name', 'BAD TEAM | 🤖')) return message.channel.send('Yetkin yetmiyor.');
+  if (!message.member.roles.find('name', '「🌺」Woman')) return message.channel.send('Yetkin yetmiyor.');
   let user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-  if (!user) return message.reply("**Etiket Atmayı Unuttun!**");
-  user.addRole('679358158346387497')
-  user.removeRole('679358246556794890')
+  if (!user) return message.reply("**LAN ETİKET ATMAYI UNUTMAYIN KAÇKERE DEYECEM !**");
+  user.addRole('679362194403753998')
+  user.removeRole('679362285977862228')
 const ky = new Discord.RichEmbed()
         .setAuthor(message.author.tag, message.author.avatarURL)
-        .setDescription(`${user}, **Kaydınız Başarıyla Gerçekleşti! İyi Eğlenceler.**`)
+        .setDescription(`${user}, ** KAYDIN OLUŞTURULMUŞTUR! İYİ EĞLENCELER.SIRADAKİ GELSİN.**`)
         .setColor('BLACK')
         .setTimestamp()
         message.channel.send(ky)
         message.react(dogrulandi)
+  
 } 
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: [],
+    aliases: ["kız,k"],
     permLevel: 0
 }
 exports.help = {
