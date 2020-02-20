@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
   
   const embed = new Discord.RichEmbed()
   .setTitle("Banner!")
-  .setColor("#2ECC71")
+  .setColor("Green")
   .setImage(linqo)
   .setFooter('Banner Oluşturuldu!')
   message.channel.send(embed)
