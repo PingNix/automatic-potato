@@ -37,7 +37,7 @@ const log = message => {
 };
 
 client.on("ready", () => {
-  client.user.setGame(`"AŞİRET - İ BÂÐ TEAM"`, "https://www.twitch.tv/furkansivkin");
+  client.user.setGame(`"BÂÐ TEAM b! "`, "https://www.twitch.tv/furkansivkin");
         }, 
   console.log("Bağlandım!")
 );
