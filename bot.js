@@ -600,7 +600,7 @@ client.on('guildMemberAdd',async member => {
 
 
 client.on('ready', ()=>{
-client.channels.get('675740110737637378').join()
+client.channels.get('680838535254769700 ').join()
 })
 
 //tagarol
