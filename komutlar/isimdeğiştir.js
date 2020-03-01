@@ -24,3 +24,7 @@ exports.help = {
     description: 'Belirttiğiniz kullanıcının kullanıcı adını değiştirir.',
     usage: 'isimdeğiştir @kullanıcı <kullanıcı adı>'
 }
+
+  if(!message.member.roles.array().filter(r => r.id === "673706812800892932")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
+    return message.channel.send("Yeterli yetkiniz bulunmuyor.");
+  }
