@@ -22,7 +22,7 @@ exports.run = (client, message, args) => {
     .addField(`Kaydı yapılan\n`, `${c.user.tag}`)
     .addField(`Kaydı yapan\n`, `${message.author.tag}`)
     .addField(`Yeni isim\n`, `${tag} ${nick} , `)
-    .setFooter("-BAD BOT | kayıt sistemi")
+    .setFooter("-BAD TEAM | kayıt sistemi")
     .setColor("#ff00a6")
     log.send(embed)
   }
