@@ -151,21 +151,21 @@ client.on('message', async message => {
   const command = args.shift().toLowerCase();
   let u = message.mentions.users.first() || message.author;
   if (command === "statsil") {
-  if (!message.guild.channels.find(channel => channel.name === "Sunucu İstatistik")) return message.channel.send(" İstatistik ayarlanmamış.")
+  if (!message.guild.channels.find(channel => channel.name === "BÂÐ ROYAL, İstatistik")) return message.channel.send(" İstatistik ayarlanmamış.")
   if (!message.member.hasPermission('ADMINISTRATOR'))
   return message.channel.send(" Yetkin bulunmuyor.");
-      const a = message.guild.channels.find(channel => channel.name === "Sunucu İstatistik").delete()
+      const a = message.guild.channels.find(channel => channel.name === "BÂÐ ROYAL, İstatistik").delete()
       if(!a) return console.log("guildStats")
-      const b = message.guild.channels.find(channel => channel.name === `Toplam Üye: ${message.guild.memberCount}`).delete()
+      const b = message.guild.channels.find(channel => channel.name === `BÂÐ Toplam Üye: ${message.guild.memberCount}`).delete()
       if(!b) return console.log("guildStatsMember")
-      const c = message.guild.channels.find(channel => channel.name === `Bot Sayısı: ${message.guild.members.filter(m => m.user.bot).size}`).delete()
+      const c = message.guild.channels.find(channel => channel.name === `BÂÐ Bot Sayısı: ${message.guild.members.filter(m => m.user.bot).size}`).delete()
       if(!c) return console.log("guildStatsBot")
-      const d = message.guild.channels.find(channel => channel.name === `Kanal Sayısı: ${message.guild.channels.size}`).delete() //|| message.guild.channels.find(channel => channel.name === `Kanal sayısı: ${message.guild.channels.size-1}`).delete() || message.guild.channels.find(channel => channel.name === `Kanal sayısı: ${message.guild.channels.size-1}`).delete() || message.guild.channels.find(channel => channel.name === `Kanal sayısı: ${message.guild.channels.size-2}`).delete()
+      const d = message.guild.channels.find(channel => channel.name === `BÂÐ Kanal Sayısı: ${message.guild.channels.size}`).delete() //|| message.guild.channels.find(channel => channel.name === `Kanal sayısı: ${message.guild.channels.size-1}`).delete() || message.guild.channels.find(channel => channel.name === `Kanal sayısı: ${message.guild.channels.size-1}`).delete() || message.guild.channels.find(channel => channel.name === `Kanal sayısı: ${message.guild.channels.size-2}`).delete()
       if(!d) return console.log("guildStatsChannel")
       message.channel.send(" Kanallar temizlendi.")
     }
   if (command === "statayarla") {
-  if (message.guild.channels.find(channel => channel.name === "Sunucu İstatistik")) return message.channel.send(" Zaten istatistik ayarlanmış.")
+  if (message.guild.channels.find(channel => channel.name === "BÂÐ ROYAL, İstatistik")) return message.channel.send(" Zaten istatistik ayarlanmış.")
   if (!message.member.hasPermission('ADMINISTRATOR'))
   return message.channel.send("<a:basarisiz:596887378476400651> | Yetkin bulunmuyor.");
   message.channel.send(`Kategori ve kanal kurulumu başlatılsın mı? başlatılacak ise **evet** yazınız.`)
@@ -175,21 +175,21 @@ client.on('message', async message => {
         errors: ['time'],
       })
     .then((collected) => {
-   message.guild.createChannel('Sunucu İstatistik', 'category', [{
+   message.guild.createChannel('BÂÐ ROYAL, İstatistik', 'category', [{
   id: message.guild.id,
   deny: ['CONNECT'],
   deny: ['VIEW_CHANNEL']
 }]);
 
- message.guild.createChannel(`Toplam Üye: ${message.guild.memberCount}`, 'voice')
+ message.guild.createChannel(`BÂÐ Toplam Üye: ${message.guild.memberCount}`, 'voice')
 .then(channel =>
- channel.setParent(message.guild.channels.find(channel => channel.name === "Sunucu İstatistik")));
- message.guild.createChannel(`Bot sayısı: ${message.guild.members.filter(m => m.user.bot).size}`, 'voice')
+ channel.setParent(message.guild.channels.find(channel => channel.name === "BÂÐ ROYAL, İstatistik")));
+ message.guild.createChannel(`BÂÐ Bot sayısı: ${message.guild.members.filter(m => m.user.bot).size}`, 'voice')
 .then(channel =>
- channel.setParent(message.guild.channels.find(channel => channel.name === "Sunucu İstatistik")));
-message.guild.createChannel(`Kanal sayısı: ${message.guild.channels.size}`, 'voice')
+ channel.setParent(message.guild.channels.find(channel => channel.name === "BÂÐ ROYAL, İstatistik")));
+message.guild.createChannel(`BÂÐ Kanal sayısı: ${message.guild.channels.size}`, 'voice')
 .then(channel =>
- channel.setParent(message.guild.channels.find(channel => channel.name === "Sunucu İstatistik")));
+ channel.setParent(message.guild.channels.find(channel => channel.name === "BÂÐ ROYAL, İstatistik")));
   message.channel.send(" <a:basarili:596886828762791948> | Sunucu paneli ayarlandı!")
         })
 }
