@@ -12,12 +12,12 @@ module.exports = client => {
    var oyun = [
       
     ];
-  "Sea "
+  "BAD TEAM"
 
     setInterval(function() {
 
         var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
 
-        client.user.setGame(oyun[random], "https://www.twitch.tv/");
+        client.user.setGame(`"BÂÐ TEAM,SCREAM"`, "https://www.twitch.tv/furkansivkin");
         }, 2 * 2500);
 }
